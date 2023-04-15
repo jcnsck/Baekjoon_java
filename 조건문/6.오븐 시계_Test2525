@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+
+        int hour =sc.nextInt();
+        int minute1 =sc.nextInt();
+        int necessary_time = sc.nextInt();
+
+        int minute2 = minute1 + necessary_time;
+
+        while(minute2>=60) {
+            hour += 1;
+            minute2 -= 60;
+        }
+
+        if (hour>=24){
+            hour -= 24;
+            System.out.printf("%d %d",hour, minute2);
+        } else {
+            System.out.printf("%d %d",hour, minute2);
+        }
+        sc.close();
+    }
+}
