@@ -10,12 +10,11 @@ public class Main {
 
         int minute2 = minute1 + necessary_time;
 
-        while(minute2>=60) {
-            hour += 1;
-            minute2 -= 60;
+        if (minute2>=60) {
+            hour = hour + minute2 / 60;
+            minute2 %= 60;
         }
-
-        if (hour>=24){
+        if (hour>=24) {
             hour -= 24;
             System.out.printf("%d %d",hour, minute2);
         } else {
